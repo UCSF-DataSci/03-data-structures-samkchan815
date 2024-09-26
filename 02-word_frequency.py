@@ -23,7 +23,26 @@ def word_frequency(text):
     frequencies = {} # Dictionary to store word frequencies
 
     # Your code here
-    
+    punctuation = """\'!()-[];:,\<>./\"?@#$%’^&‘*_~“”"""
+    text = text.lower()
+    wordList = text.split()
+
+    for i in range(len(wordList)): # loop through each word in list
+        for letter in wordList[i]: # loop through each letter in word
+            if letter in punctuation:
+                wordList[i] = wordList[i].replace(letter, '') # clean up punctuation
+
+        if '—' in wordList[i]: # remove — between words
+            splitWord = wordList[i].split('—')
+            wordList[i] = splitWord[0] # replace joint word with first word
+            if splitWord is not '':
+                wordList.extend(splitWord[1]) # add second word if there is one
+
+        if wordList[i] in frequencies: # if not already in dict, add 1
+            frequencies[wordList[i]] += 1
+        else: # else create new dict key-value pair
+            frequencies[wordList[i]] = 1
+
     return frequencies
 
 # Scaffold for opening a file and running word_frequency() on the contents

@@ -17,13 +17,17 @@ from datetime import date
 
 quotes = [
     # Create a list of quotes here
+    "Eat some noodles",
+    "Eat some pie", 
+    "Eat some dumplings",
+    "Eat some kimchi"
 ]
 
 def get_quote_of_the_day(quotes):
     todays_quote = None
 
     # Your code here
-    
+    todays_quote = random.choice(quotes)
     return todays_quote
 
 if __name__ == "__main__":
