@@ -24,11 +24,12 @@ quotes = [
 ]
 
 def get_quote_of_the_day(quotes):
+    '''Return a random quote of the day from list'''
     todays_quote = None
 
     # Your code here
-    todays_quote = random.choice(quotes)
-    return todays_quote
+    todays_quote = random.choice(quotes) # get random quote
+    return todays_quote # return random quote
 
 if __name__ == "__main__":
     print(get_quote_of_the_day(quotes))

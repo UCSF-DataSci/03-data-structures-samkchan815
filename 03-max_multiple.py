@@ -39,19 +39,20 @@ THOUSAND_DIGIT_NUMBER = """
 """.replace("\n", "")
 
 def find_greatest_product(number_string, adjacent_digits=13):
+    '''find greatest product of string of numbers'''
     max_product = 0
     
     # Your code here
-    for i in range(len(number_string) - adjacent_digits + 1):
-        curr = number_string[i:i+13]
-        total = 1
+    for i in range(len(number_string) - adjacent_digits + 1): # sliding window
+        curr = number_string[i:i+13] # get current string of numbers
+        total = 1 # reset total
         for i in curr: # multiple all numbers
             total *= int(i)
         
-        if total > max_product:
+        if total > max_product: # check if current total is larger than max
             max_product = total
 
-    return max_product
+    return max_product # return max
 
 if __name__ == "__main__":
     result = find_greatest_product(THOUSAND_DIGIT_NUMBER)

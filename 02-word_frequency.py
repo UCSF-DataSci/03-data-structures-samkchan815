@@ -20,6 +20,7 @@ Hints:
 import sys
 
 def word_frequency(text):
+    '''Return dictionary of word frequencies from text'''
     frequencies = {} # Dictionary to store word frequencies
 
     # Your code here
