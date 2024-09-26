@@ -26,6 +26,7 @@ def word_frequency(text):
     punctuation = """\'!()-[];:,\<>./\"?@#$%’^&‘*_~“”"""
     text = text.lower()
     wordList = text.split()
+    wordList = sorted(wordList)
 
     for i in range(len(wordList)): # loop through each word in list
         for letter in wordList[i]: # loop through each letter in word
