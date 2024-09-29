@@ -17,10 +17,13 @@ from datetime import date
 
 quotes = [
     # Create a list of quotes here
-    "Eat some noodles",
-    "Eat some pie", 
-    "Eat some dumplings",
-    "Eat some kimchi"
+    "You will be found",
+    "No day but today", 
+    "No one deserves to disappear",
+    "It's just life, so keep dancing through",
+    "Forget regret, or life is yours to miss",
+    "We control one flat rectangle of canvas at a time",
+    
 ]
 
 def get_quote_of_the_day(quotes):
@@ -34,5 +37,9 @@ def get_quote_of_the_day(quotes):
 if __name__ == "__main__":
     print(get_quote_of_the_day(quotes))
 
+# Add to Cron using the following:
+print('0 8 * * * /usr/bin/python3 ./01-daily_quote.py >> output.txt')
+
 # Cron job (add this to your crontab):
 # 0 8 * * * /usr/bin/python3 /path/to/quote_generator.py >> /path/to/daily_quote.txt
+
